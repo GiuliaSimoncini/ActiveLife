@@ -1,6 +1,7 @@
 package project;
 
 import project.operations.ToDoVisitor;
+import project.filtering.FilteringStrategy;
 import java.util.Collection;
 import java.util.ArrayList;
 import java.util.Map;
@@ -9,6 +10,7 @@ import java.util.stream.Stream;
 public class Task extends ToDo {
     private Collection<ToDo> toDos = new ArrayList<ToDo>();
     private int priority = 0;
+    private FilteringStrategy filteringStrategy;
 
     public Task(String title) {
         super(title);
@@ -19,6 +21,25 @@ public class Task extends ToDo {
             throw new IllegalArgumentException("Priority can not be a negative number or equal to zero");
         this.priority = priority;
         return this;
+    }
+
+    public Task filteringStrategy(FilteringStrategy filteringStrategy) {
+        if (filteringStrategy == null)
+            throw new IllegalArgumentException("Filtering Strategy can not be null");
+        this.filteringStrategy = filteringStrategy;
+        return this;
+    }
+
+    public Stream<ToDo> getFilteredStream() {
+        if (filteringStrategy == null)
+            throw new IllegalArgumentException("Filtering Strategy can not be null");
+        return filteringStrategy.filterToDo(this);
+    }
+
+    public String getFilteredDescription() {
+        if (filteringStrategy == null)
+            throw new IllegalArgumentException("Filtering Strategy can not be null");
+        return filteringStrategy.getFilteredDescription(this);
     }
 
     public Task removeToDo(ToDo toDo) {
