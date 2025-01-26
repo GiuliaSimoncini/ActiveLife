@@ -56,4 +56,25 @@ public class TaskTest {
         assertEquals(2, mainTask.stream()
                 .count());
     }
+
+    @Test
+    public void nullFilteringStrategyTest() {
+        Task task = new Task("aTitle");
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> task.filteringStrategy(null));
+        assertEquals("Filtering Strategy can not be null", exception.getMessage());
+    }
+
+    @Test
+    public void getFilteredStreamExceptionTest() {
+        Task task = new Task("aTitle");
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> task.getFilteredStream());
+        assertEquals("Filtering Strategy can not be null", exception.getMessage());
+    }
+
+    @Test
+    public void getFilteredDescriptionExceptionTest() {
+        Task task = new Task("aTitle");
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> task.getFilteredDescription());
+        assertEquals("Filtering Strategy can not be null", exception.getMessage());
+    }
 }
