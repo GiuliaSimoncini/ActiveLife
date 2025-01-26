@@ -2,6 +2,8 @@ package tests;
 import project.*;
 import static org.junit.Assert.*;
 import org.junit.Test;
+import java.util.List;
+import java.util.Map;
 
 public class TaskTest {
     @Test
@@ -48,12 +50,15 @@ public class TaskTest {
                 .addGamingSession("Chess", 10)
                 .addToDo(new Task("secondSubTask"))
                 .addGamingSession("Tekken", 10)
+                .addShoppingSession("Groceries", 10, 100,
+                        Map.of("Milk", 2, "Bread", 1))
+                .addStudySession("Study", 10, List.of("Math", "Physics"))
                 .removeByTitle("Chess")
                 .removeByTitle("NotInside")
                 .removeByTitle("subTask");
         assertFalse(mainTask.isToDoInside("Chess"));
         assertFalse(mainTask.isToDoInside("subTask"));
-        assertEquals(2, mainTask.stream()
+        assertEquals(4, mainTask.stream()
                 .count());
     }
 

@@ -67,6 +67,16 @@ public class Task extends ToDo {
         return this;
     }
 
+    public Task addStudySession(String title, int duration, Collection<String> subjects) {
+        toDos.add(new StudySession(title, duration, subjects));
+        return this;
+    }
+
+    public Task addShoppingSession(String title, int duration, int budget, Map<String, Integer> items) {
+        toDos.add(new ShoppingSession(title, duration, budget, items));
+        return this;
+    }
+
     public boolean isToDoInside(ToDo toDo) {
         return toDos.contains(toDo);
     }
