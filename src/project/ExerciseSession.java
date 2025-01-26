@@ -1,5 +1,6 @@
 package project;
 
+import project.operations.ToDoVisitor;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.stream.Stream;
@@ -61,5 +62,10 @@ public class ExerciseSession extends ToDo {
     @Override
     public int getPriority() {
         return 0;
+    }
+
+    @Override
+    public void accept(ToDoVisitor visitor) {
+        visitor.visitExerciseSession(this);
     }
 }

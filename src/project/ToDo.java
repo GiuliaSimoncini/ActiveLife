@@ -1,5 +1,7 @@
 package project;
 
+import project.operations.ToDoVisitor;
+
 public abstract class ToDo {
     private String title;
 
@@ -18,4 +20,6 @@ public abstract class ToDo {
     public abstract int getPriority();
 
     public abstract int getDuration();
+
+    public abstract void accept(ToDoVisitor visitor);
 }

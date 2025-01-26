@@ -1,5 +1,7 @@
 package project;
 
+import project.operations.ToDoVisitor;
+
 public class GamingSession extends ToDo {
     private int duration;
     private Boolean multiplayer;
@@ -44,6 +46,11 @@ public class GamingSession extends ToDo {
     @Override
     public int getPriority() {
         return 0;
+    }
+
+    @Override
+    public void accept(ToDoVisitor visitor) {
+        visitor.visitGamingSession(this);
     }
 }
 

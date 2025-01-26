@@ -1,5 +1,6 @@
 package project;
 
+import project.operations.ToDoVisitor;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.stream.Stream;
@@ -44,5 +45,10 @@ public class StudySession extends ToDo {
     @Override
     public int getDuration() {
         return duration;
+    }
+
+    @Override
+    public void accept(ToDoVisitor visitor) {
+        visitor.visitStudySession(this);
     }
 }

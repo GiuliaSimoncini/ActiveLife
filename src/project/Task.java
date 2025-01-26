@@ -1,5 +1,6 @@
 package project;
 
+import project.operations.ToDoVisitor;
 import java.util.Collection;
 import java.util.ArrayList;
 import java.util.Map;
@@ -65,6 +66,11 @@ public class Task extends ToDo {
     @Override
     public int getDuration() {
         return 0;
+    }
+
+    @Override
+    public void accept(ToDoVisitor visitor) {
+        visitor.visitTask(this);
     }
 }
 
