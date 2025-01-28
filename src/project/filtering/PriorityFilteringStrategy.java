@@ -23,7 +23,7 @@ public class PriorityFilteringStrategy implements FilteringStrategy {
     public String getFilteredDescription(Task task) {
         StringBuilder builder = new StringBuilder();
         if (task.getPriority() >= minPriority)
-            builder.append(task.getTitle() + "\n");
+            builder.append(task.getTitle()).append("\n");
         this.filterToDo(task).forEach(toDo -> builder.append(toDo.getTitle())
                 .append("\n"));
         if (builder.isEmpty())

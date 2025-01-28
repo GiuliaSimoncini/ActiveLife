@@ -41,7 +41,7 @@ public class TitleKeywordFilteringStrategy implements FilteringStrategy {
         if (builder.isEmpty())
             builder.append("No task contains any of the keywords\n");
         builder.append("Keywords:\n");
-        keywords.forEach(str -> builder.append("\t" + str + "\n"));
+        keywords.forEach(str -> builder.append("\t").append(str).append("\n"));
         return builder.toString();
     }
 }
