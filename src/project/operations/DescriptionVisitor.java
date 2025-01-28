@@ -42,13 +42,13 @@ public class DescriptionVisitor implements ToDoVisitor {
             for (int i = 0; i < tabs+1; i++) {
                 description.append("\t");
             }
-            description.append("Playing on: " + gamingSession.getPlatform());
+            description.append("Playing on: ").append(gamingSession.getPlatform());
         }
         if (gamingSession.getMultiplayer() != null) {
             description.append("\n");
             for (int i = 0; i < tabs+1; i++)
                 description.append("\t");
-            description.append("Multiplayer: " + gamingSession.getMultiplayer());
+            description.append("Multiplayer: ").append(gamingSession.getMultiplayer());
         }
     }
 
@@ -62,7 +62,7 @@ public class DescriptionVisitor implements ToDoVisitor {
                     description.append("\n");
                     for (int i = 0; i < tabs + 1; i++)
                         description.append("\t");
-                    description.append(entry.getKey() + " - " + entry.getValue() + " mins");
+                    description.append(entry.getKey()).append(" - ").append(entry.getValue()).append(" mins");
                 });
     }
 
@@ -92,18 +92,18 @@ public class DescriptionVisitor implements ToDoVisitor {
             description.append("\n");
             for (int i = 0; i < tabs + 1; i++)
                 description.append("\t");
-            description.append("Shopping at: " + shoppingSession.getPlace());
+            description.append("Shopping at: ").append(shoppingSession.getPlace());
         }
         description.append("\n");
         for (int i = 0; i < tabs + 1; i++)
             description.append("\t");
-        description.append("Max budget: " + shoppingSession.getMaxBudget());
+        description.append("Max budget: ").append(shoppingSession.getMaxBudget());
         shoppingSession.streamShopping()
                 .forEach(entry -> {
                     description.append("\n");
                     for (int i = 0; i < tabs + 2; i++)
                         description.append("\t");
-                    description.append(entry.getKey() + " - " + entry.getValue());
+                    description.append(entry.getKey()).append(" - ").append(entry.getValue());
                 });
     }
 
