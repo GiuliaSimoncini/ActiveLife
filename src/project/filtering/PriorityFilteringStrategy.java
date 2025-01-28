@@ -26,7 +26,7 @@ public class PriorityFilteringStrategy implements FilteringStrategy {
             builder.append(task.getTitle() + "\n");
         this.filterToDo(task).forEach(toDo -> builder.append(toDo.getTitle())
                 .append("\n"));
-        if (builder.length() == 0)
+        if (builder.isEmpty())
             builder.append("No task has a high enough priority");
         return builder.toString();
     }

@@ -38,7 +38,7 @@ public class TitleKeywordFilteringStrategy implements FilteringStrategy {
         StringBuilder builder = new StringBuilder();
         this.filterToDo(task).forEach(toDo -> builder.append(toDo.getTitle())
                 .append("\n"));
-        if (builder.length() == 0)
+        if (builder.isEmpty())
             builder.append("No task contains any of the keywords\n");
         builder.append("Keywords:\n");
         keywords.forEach(str -> builder.append("\t" + str + "\n"));
