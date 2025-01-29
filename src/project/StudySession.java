@@ -6,7 +6,7 @@ import java.util.Collection;
 import java.util.stream.Stream;
 
 public class StudySession extends ToDo {
-    private int duration;
+    private final int duration;
     private Collection<String> subjects = new ArrayList<String>();
 
     public StudySession(String title, int duration) {

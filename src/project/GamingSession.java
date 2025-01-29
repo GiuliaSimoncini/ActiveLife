@@ -3,7 +3,7 @@ package project;
 import project.operations.ToDoVisitor;
 
 public class GamingSession extends ToDo {
-    private int duration;
+    private final int duration;
     private Boolean multiplayer;
     private String platform;
 

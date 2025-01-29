@@ -6,9 +6,9 @@ import java.util.Map;
 import java.util.stream.Stream;
 
 public class ShoppingSession extends ToDo {
-    private int duration;
+    private final int duration;
     private String place;
-    private int maxBudget;
+    private final int maxBudget;
     private Map<String, Integer> shoppingList = new LinkedHashMap<String, Integer>();
 
     public ShoppingSession(String title, int duration, int maxBudget) {
@@ -42,6 +42,7 @@ public class ShoppingSession extends ToDo {
     public Stream<Map.Entry<String, Integer>> streamShopping() {
         return shoppingList.entrySet().stream();
     }
+
     public ShoppingSession setPlace(String place) {
         if (place == null)
             throw new IllegalArgumentException("Place can not be null");

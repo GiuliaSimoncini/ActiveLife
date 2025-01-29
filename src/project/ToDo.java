@@ -3,7 +3,7 @@ package project;
 import project.operations.ToDoVisitor;
 
 public abstract class ToDo {
-    private String title;
+    private final String title;
 
     protected ToDo(String title) {
         if (title == null)
