@@ -3,7 +3,7 @@ package project.operations;
 import project.*;
 
 public class ShortDescriptionVisitor implements ToDoVisitor {
-    private StringBuilder shortDescription = new StringBuilder();
+    private final StringBuilder shortDescription = new StringBuilder();
     private int tabs = 0;
 
     @Override
