@@ -21,7 +21,7 @@ public class StudySessionTest {
     }
 
     @Test
-    public void removeSubject() {
+    public void removeSubjectTest() {
         studySession.addSubject("subject")
                 .addSubject("subject2")
                 .addSubject("subject3");
