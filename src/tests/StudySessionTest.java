@@ -13,7 +13,7 @@ public class StudySessionTest {
     }
 
     @Test
-    public void addSubject() {
+    public void addSubjectTest() {
         studySession.addSubject("subject")
                 .addSubject("subject2")
                 .addSubject("subject3");
