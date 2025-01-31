@@ -96,7 +96,7 @@ public class SQLTaskDAOTest {
         Task task = tasks.stream()
                 .filter(t -> t.getTitle().equals("Early Morning tasks"))
                 .findFirst()
-                .get();
+                .orElseThrow(() -> new AssertionError("Task not found"));
         DescriptionVisitor visitor = new DescriptionVisitor();
         task.accept(visitor);
         assertEquals("Early Morning tasks - Priority: 10\n" +
