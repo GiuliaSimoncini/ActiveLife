@@ -37,7 +37,7 @@ public class PriorityFilteringStrategyTest {
         task.addToDo(new Task("aSecondTask")
                         .priority(3)
                         .addToDo(new Task ("aInnerTask")
-                                .priority(4)))
+                                .priority(2)))
                 .addToDo(new Task ("aThirdTask")
                         .priority(5))
                 .addGamingSession("Chess", 20)
