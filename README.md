@@ -1,0 +1,1 @@
+Elaborato per il corso di Ingegneria del Software dell'Università di Firenze realizzato da Giulia Simoncini. Tale elaborato riguarda la creazione di un gestore delle attività nel tempo libero denominato ActiveLife.
